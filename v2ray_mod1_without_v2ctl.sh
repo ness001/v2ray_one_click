@@ -292,7 +292,7 @@ getData() {
             [[ -z "${PORT}" ]] && PORT=`shuf -i200-65000 -n1`
             if [[ "${PORT:0:1}" = "0" ]]; then
                 colorEcho ${RED}  " 端口不能以0开头"
-                exit 1
+                exit    
             fi
         fi
         colorEcho ${BLUE}  " v2ray端口：$PORT"
@@ -851,7 +851,7 @@ Type=simple
 User=root
 #User=nobody
 NoNewPrivileges=true
-ExecStart=/usr/bin/v2ray/v2ray -config /etc/v2ray/config.json
+ExecStart=/usr/bin/v2ray/v2ray run -c /etc/v2ray/config.json
 Restart=on-failure
 
 [Install]
