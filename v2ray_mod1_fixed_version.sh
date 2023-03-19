@@ -452,7 +452,7 @@ getData() {
         echo "    y)允许，会有更多ip请求网站，但会消耗一些流量，vps流量充足情况下推荐使用"
         echo "    n)不允许，爬虫不会访问网站，访问ip比较单一，但能节省vps流量"
         # read -p "  请选择：[y/n]" answer
-        $answer="n"
+        answer="n"
         if [[ -z "$answer" ]]; then
             ALLOW_SPIDER="n"
         elif [[ "${answer,,}" = "y" ]]; then
@@ -465,7 +465,7 @@ getData() {
 
     echo ""
     #read -p " 是否安装BBR(默认安装)?[y/n]:" NEED_BBR
-    $NEED_BBR="N"
+    NEED_BBR="N"
     [[ -z "$NEED_BBR" ]] && NEED_BBR=y
     [[ "$NEED_BBR" = "Y" ]] && NEED_BBR=y
     colorEcho $BLUE " 安装BBR：$NEED_BBR"
